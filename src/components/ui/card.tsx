@@ -15,7 +15,7 @@ Root.displayName = 'Card'
 const Header = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div
-      className={cn('flex flex-col space-y-1.5 p-6', className)}
+      className={cn('flex flex-col space-y-1.5 p-4', className)}
       ref={ref}
       {...props}
     />
@@ -63,7 +63,7 @@ Content.displayName = 'Content'
 const Footer = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(
   ({ className, ...props }, ref) => (
     <div
-      className={cn('flex items-center p-6 pt-0', className)}
+      className={cn('flex items-center p-4 pt-0', className)}
       ref={ref}
       {...props}
     />
