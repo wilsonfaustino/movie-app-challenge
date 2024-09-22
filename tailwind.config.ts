@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      aspectRatio: {
+        poster: '2 / 3',
+      },
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
