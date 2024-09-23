@@ -1,7 +1,7 @@
 import { env } from '@/env'
 import { searchMovieSchema, searchMovieWithRatingSchema } from '@/schemas/movie'
 
-export async function getMovies(search: string) {
+export async function getMovies(search: string, page?: string) {
   if (!search) {
     return {
       movies: [],
@@ -9,7 +9,9 @@ export async function getMovies(search: string) {
     }
   }
 
-  const res = await fetch(`${env.API_URL}?apikey=${env.API_KEY}&s=${search}`)
+  const pageQuery = page ? `&page=${page}` : ''
+
+  const res = await fetch(`${env.API_URL}?apikey=${env.API_KEY}&s=${search}${pageQuery}`, { cache: 'no-store' })
   const data = await res.json()
 
   if (data.Response === 'False') {
