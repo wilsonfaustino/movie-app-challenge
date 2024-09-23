@@ -10,14 +10,13 @@ export function MovieCard({ movie }: { movie: SearchMovieWithRating }) {
     <Card className="flex max-h-36 gap-2 overflow-hidden">
       <div className="flex-1">
         <Card.Header>
-          <Card.Title className="text-lg">{movie.Title}</Card.Title>
+          <Card.Title>{movie.Title}</Card.Title>
           <Card.Description>{`Year: ${movie.Year}`}</Card.Description>
+          <Card.Description>{`Rating: ${movie.imdbRating}`}</Card.Description>
         </Card.Header>
-
-        <Card.Footer>{`Rating: ${movie.imdbRating}`}</Card.Footer>
       </div>
       <div className="aspect-poster h-full">
-        <Link href={`/${movie.imdbID}`}>
+        <Link href={`/item/${movie.imdbID}`}>
           <Image
             alt={movie.Title}
             className="h-full w-auto object-cover"
