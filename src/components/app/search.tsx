@@ -7,7 +7,7 @@ import { useQueryState } from 'nuqs'
 import { Input } from '@/components/ui/input'
 
 export function Search() {
-  const [search, setSearch] = useQueryState('search')
+  const [search, setSearch] = useQueryState('search', { defaultValue: '', clearOnDefault: true })
   const pathname = usePathname()
   const router = useRouter()
 
