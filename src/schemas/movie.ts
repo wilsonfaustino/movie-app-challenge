@@ -26,10 +26,10 @@ export const movieSchema = z.object({
   imdbVotes: z.string(),
   imdbID: z.string(),
   Type: z.string(),
-  DVD: z.string(),
-  BoxOffice: z.string(),
-  Production: z.string(),
-  Website: z.string(),
+  DVD: z.string().optional(),
+  BoxOffice: z.string().optional(),
+  Production: z.string().optional(),
+  Website: z.string().optional(),
   Response: z.string(),
 })
 
