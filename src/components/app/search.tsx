@@ -2,10 +2,11 @@
 
 import { Search as SearchIcon } from 'lucide-react'
 import { useQueryState } from 'nuqs'
+import { Suspense } from 'react'
 
 import { Input } from '@/components/ui/input'
 
-export function Search() {
+function SearchForm() {
   const [search, setSearch] = useQueryState('search', { defaultValue: '', clearOnDefault: true })
   const [, setPage] = useQueryState('page')
 
@@ -31,5 +32,13 @@ export function Search() {
         value={search ?? ''}
       />
     </form>
+  )
+}
+
+export function Search() {
+  return (
+    <Suspense>
+      <SearchForm />
+    </Suspense>
   )
 }
