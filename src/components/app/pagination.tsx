@@ -29,6 +29,7 @@ export function Pagination({ totalResults }: PaginationProps) {
         <PaginationUI.Link
           href={`/?search=${search}&page=${page}`}
           isActive={currentPage === page}
+          prefetch
         >
           {page}
         </PaginationUI.Link>
@@ -51,13 +52,17 @@ export function Pagination({ totalResults }: PaginationProps) {
           <PaginationUI.Content>
             {currentPage > 1 && (
               <PaginationUI.Item>
-                <PaginationUI.Previous href={`/?search=${search}&page=${currentPage - 1}`} />
+                <PaginationUI.Previous
+                  href={`/?search=${search}&page=${currentPage - 1}`}
+                  prefetch
+                />
               </PaginationUI.Item>
             )}
             <PaginationUI.Item>
               <PaginationUI.Link
                 href={`/?search=${search}&page=1`}
                 isActive={currentPage === 1}
+                prefetch
               >
                 1
               </PaginationUI.Link>
@@ -75,12 +80,20 @@ export function Pagination({ totalResults }: PaginationProps) {
             )}
             {highestPage < lastPage && (
               <PaginationUI.Item>
-                <PaginationUI.Link href={`/?search=${search}&page=${lastPage}`}>{lastPage}</PaginationUI.Link>
+                <PaginationUI.Link
+                  href={`/?search=${search}&page=${lastPage}`}
+                  prefetch
+                >
+                  {lastPage}
+                </PaginationUI.Link>
               </PaginationUI.Item>
             )}
             {currentPage < highestPage && (
               <PaginationUI.Item>
-                <PaginationUI.Next href={`/?search=${search}&page=${currentPage + 1}`} />
+                <PaginationUI.Next
+                  href={`/?search=${search}&page=${currentPage + 1}`}
+                  prefetch
+                />
               </PaginationUI.Item>
             )}
           </PaginationUI.Content>
