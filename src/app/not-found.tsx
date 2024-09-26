@@ -7,7 +7,7 @@ export default function NotFound() {
   return (
     <div className="flex flex-col items-center justify-center py-8 text-center">
       <h2 className="text-3xl font-semibold">Not Found</h2>
-      <p className="text-muted-foreground text-lg">Could not find the movie you are looking for.</p>
+      <p className="text-lg text-muted-foreground">Could not find the movie you are looking for.</p>
       <Image
         alt="Sad popcorn"
         height={300}

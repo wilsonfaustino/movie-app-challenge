@@ -10,7 +10,7 @@ export function MoviesSkeleton() {
       data={MOCK_DATA}
       renderItem={(item) => (
         <Skeleton
-          className="border-muted-foreground h-36 w-full rounded-xl border"
+          className="h-36 w-full rounded-xl border border-muted-foreground"
           key={item}
         />
       )}

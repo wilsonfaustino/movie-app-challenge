@@ -99,7 +99,7 @@ export function Pagination({ totalResults }: PaginationProps) {
           </PaginationUI.Content>
         </PaginationUI>
       )}
-      <p className="text-muted-foreground text-sm">
+      <p className="text-sm text-muted-foreground">
         {`Showing `}
         <span className="font-bold text-white">{initialDisplayedItem}</span>
         {` to `}

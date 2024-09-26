@@ -16,7 +16,7 @@ export default async function Home({ searchParams }: { searchParams: Record<stri
 
   return (
     <div>
-      <h2 className="text-muted-foreground my-4 ml-auto text-center text-xl font-semibold">
+      <h2 className="my-4 ml-auto text-center text-xl font-semibold text-muted-foreground">
         Search results for &quot;{search}&quot;
       </h2>
       <Suspense
