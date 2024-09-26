@@ -21,14 +21,14 @@ export default async function Home({ searchParams }: { searchParams: Record<stri
       </h2>
       <Suspense
         fallback={<MoviesSkeleton />}
-        key={`search-${search}-page-${page}`}
+        key={`search-${search}${page ? `-page-${page}` : ''}`}
       >
         <MoviesList
           page={page}
           query={search}
         />
       </Suspense>
-      <Pagination totalResults={totalResults} />
+      {totalResults > 0 && <Pagination totalResults={totalResults} />}
     </div>
   )
 }
