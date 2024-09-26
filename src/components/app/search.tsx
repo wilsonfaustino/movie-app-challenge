@@ -1,27 +1,20 @@
 'use client'
 
 import { Search as SearchIcon } from 'lucide-react'
-import { usePathname, useRouter } from 'next/navigation'
 import { useQueryState } from 'nuqs'
 
 import { Input } from '@/components/ui/input'
 
 export function Search() {
   const [search, setSearch] = useQueryState('search', { defaultValue: '', clearOnDefault: true })
-  const pathname = usePathname()
-  const router = useRouter()
+  const [, setPage] = useQueryState('page')
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (!search) return
 
-    if (pathname !== '/') {
-      router.push(`/?search=${search}`)
-
-      return
-    }
-
-    window.location.reload()
+    setPage(null)
+    window.location.replace(`/?search=${search}`)
   }
 
   return (
